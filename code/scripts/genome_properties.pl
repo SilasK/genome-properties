@@ -8,7 +8,7 @@ use warnings;
 $|=1;
 use FileHandle;
 use Getopt::Long;
-use Data::Printer;
+#use Data::Printer;
 use List::Util qw[min max];
 use GenomeProperties;
 use GenomeProperties::Definition;
@@ -17,14 +17,14 @@ use GenomeProperties::StepEvidence;
 
 
 my(%options);
-GetOptions ( \%options, 
+GetOptions ( \%options,
               'seqs=s',
-              'matches=s', 
+              'matches=s',
               'gpdir=s',
               'outdir=s',
               'outfiles=s@',
               'property=s',
-			        'list=s',       
+			        'list=s',
 			        'all',
 			        'name=s',
               'debug',
@@ -62,7 +62,7 @@ sub help{
 
 #TODO Improve help section
   print<<EOF;
-  
+
   Holy crap!
 
 <$0> -seqs /nfs/production/interpro/genome_properties/data/genomes/fasta/1005058.fasta -all -name 1005058  -eval_order /nfs/production/interpro/genome_properties/code/genome_properties_flatfiles/evaluation_order

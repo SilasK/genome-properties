@@ -8,7 +8,7 @@ use warnings;
 $|=1;
 use FileHandle;
 use Getopt::Long;
-use Data::Printer;
+#use Data::Printer;
 use List::Util qw[min max];
 use GenomeProperties;
 use GenomeProperties::Definition;
@@ -17,7 +17,7 @@ use GenomeProperties::StepEvidence;
 
 
 my(%options);
-GetOptions ( \%options, 
+GetOptions ( \%options,
               'seqs=s',
               'matches=s',
               'match_source=s',
@@ -79,22 +79,22 @@ seq <filename>           : FASTA file of sequences that need to be analysed.
 == Calculation options ==
 
 One of the the following three:
-all                      : Calculate against all Genome Properties 
-property <accession>     : Calculate against 
-list     <filename>      : Filename containing a list of Genome Properties that need 
+all                      : Calculate against all Genome Properties
+property <accession>     : Calculate against
+list     <filename>      : Filename containing a list of Genome Properties that need
                          : to be evaluatated.
 
-== Genome Properties files == 
-Both of these are required: 
+== Genome Properties files ==
+Both of these are required:
 gpdir <directory name>   : Genome Properties release directory
-gpff  <filename>         : Name of the flatfile  
+gpff  <filename>         : Name of the flatfile
 
 Optional:
 eval_order <filename>    : File containing an optimal evaluation order.
 
 == Output options ==
 
-name <name>              : Output file tag name (required). This will be prefixed 
+name <name>              : Output file tag name (required). This will be prefixed
                            depending on the outputs requested.
 outdir <directory name>  : Name of the output directory (optional, default pwd).
 outfiles <format>        : Format can be one of the following [summary|long|table|match|web_json]
@@ -106,7 +106,7 @@ help                     : Prints this help message
 debug                    : Turn on verbose debugging
 
 
-Example: 
+Example:
 $0 -matches /Users/rdf/Projects/InterPro/GenomeProperties/EcoliExample/83333.fasta.tsv  -all -name 83333.test -gpdir /tmp/release/testv0.1 -gpff genomeProperties.txt -outfiles summary
 
 
